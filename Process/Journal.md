@@ -1,0 +1,7 @@
+# Game Analysis: Hades:
+
+Hades is an interesting game because of its dynamic combat system, which encourages experimentation through a mix of weapons and abilities, making each playthrough unique and engaging. The game's roguelike design, characterized by randomized levels and enemies, enhances replayability. This unpredictability keeps the gameplay fresh and encourages players to devise strategies based on their current resources. 
+
+Hades also features a well-designed progression system that allows players to acquire permanent upgrades and unlocks, fostering a sense of ongoing improvement. To maintain balance, the level of difficulty escalates when players attain a specific number of upgrades. The game's narrative is seamlessly woven into the gameplay, with non-playable characters reacting to the player's progress and offering insights into the lore of the main character. However, Hades is not without its flaws. Some weapons and abilities lack balance, with certain ones being noticeably more powerful and others significantly weaker.
+
+For future projects, some intriguing concepts to incorporate could include the randomization of abilities while still granting players autonomy in their gameplay style. This would necessitate a variety of weapons to accommodate different combat styles, such as close-range, long range, offensive, and defensive combat. Each weapon should also have upgrade options to ensure that players who favor a particular weapon can still enjoy a varied experience.
