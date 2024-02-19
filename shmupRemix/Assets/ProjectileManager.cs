@@ -23,4 +23,15 @@ public class ProjectileManager : MonoBehaviour
         }
       
     }
+    //destroy enemy and projectile on collision
+     void OnTriggerEnter2D(Collider2D other)
+    {
+        // Check if the projectile hits an enemy
+        if (other.CompareTag("Enemy"))
+        {
+            // Destroy the enemy and the projectile
+            Destroy(other.gameObject); // Destroy the enemy
+            Destroy(gameObject);       // Destroy the projectile
+        }
+    }
 }
