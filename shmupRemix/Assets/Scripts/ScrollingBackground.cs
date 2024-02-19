@@ -1,23 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
-public class ScrollingBackground : MonoBehaviour
-{
-    public float scrollSpeed = 1.0f;  // Adjust the scrolling speed
-    public Material cloudsMaterial;    // Reference to your material
-
-    private Material clonedMaterial;   // Clone of the material
-
-    void Start()
-    {
-        // Clone the material to avoid modifying the original
-        clonedMaterial = new Material(cloudsMaterial);
-        GetComponent<SpriteRenderer>().material = clonedMaterial;
-    }
-
+using UnityEngine.UI;
+ 
+public class ScrollingBackground : MonoBehaviour {
+    public float speed;
+    [SerializeField] private Renderer bgRenderer;
+ 
     void Update()
     {
-        // Scroll the background
-        float offset = Time.time * scrollSpeed;
-        clonedMaterial.mainTextureOffset = new Vector2(0, offset);
+        bgRenderer.material.mainTextureOffset += new Vector2(speed* Time.deltaTime,0);
     }
 }
+ 
