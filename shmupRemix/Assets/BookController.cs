@@ -28,11 +28,7 @@ public class BookController : MonoBehaviour
         // Apply force for movement
         rb.velocity = new Vector2(direction.x * speed, direction.y * speed);
 
-        // Apply additional force for gliding if the Glide key is pressed
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Glide();
-        }
+      
 
          // Shoot projectile when the Q key is pressed
         if (Input.GetKeyDown(KeyCode.Q))
@@ -41,22 +37,12 @@ public class BookController : MonoBehaviour
         }
     }
 
-    void Glide()
-    {
-        // Limit gliding speed
-        float currentSpeed = rb.velocity.magnitude;
-        if (currentSpeed < maxGlideSpeed)
-        {
-            // Apply additional force for gliding
-            rb.AddForce(rb.velocity.normalized * glideForce);
-        }
-    }
 
      void Shoot()
     {
        
            // Calculate the position in front of the book
-         spawnPosition = new Vector2(transform.position.x-0.3f, 0.15f+transform.position.y);
+         spawnPosition = new Vector2(transform.position.x-0.15f, transform.position.y+0.15f);
 
         // Instantiate a projectile at the calculated position
         GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
