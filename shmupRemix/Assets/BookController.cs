@@ -41,7 +41,7 @@ public class BookController : MonoBehaviour
      void Shoot()
     {
        
-           // Calculate the position in front of the book
+           // Calculate the position the plane projectile is gonna spawn at
          spawnPosition = new Vector2(transform.position.x-0.15f, transform.position.y+0.15f);
 
         // Instantiate a projectile at the calculated position
