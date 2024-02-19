@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6794503233322226934}
   - component: {fileID: -6731023586820732368}
   - component: {fileID: 5011225310847403719}
+  - component: {fileID: -389150416382548491}
   m_Layer: 0
   m_Name: plane
   m_TagString: Untagged
@@ -133,3 +134,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 32.6, y: 11.731542}
   m_EdgeRadius: 0
+--- !u!114 &-389150416382548491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009265728304280092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb8984fc286ed334b94128bbfaed6aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

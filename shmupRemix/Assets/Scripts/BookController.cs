@@ -35,6 +35,7 @@ public class BookController : MonoBehaviour
         {
             Shoot();
         }
+
     }
 
 
@@ -52,5 +53,7 @@ public class BookController : MonoBehaviour
 
         // Set the velocity of the projectile based on the book's direction
         projectileRb.velocity = transform.right * projectileSpeed;
+
+     
     }
 }
