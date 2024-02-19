@@ -6,6 +6,8 @@ public class BookController : MonoBehaviour
     public float glideForce = 2f;     // Adjust the force applied for gliding
     public float maxGlideSpeed = 8f;  // Adjust the maximum gliding speed
 
+    public GameObject projectilePrefab; // plane projectile prefab
+    public float projectileSpeed = 10f; // Adjust the speed of the projectile
     private Rigidbody2D rb;
 
     void Start()
@@ -31,6 +33,12 @@ public class BookController : MonoBehaviour
         {
             Glide();
         }
+
+         // Shoot projectile when the Q key is pressed
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Shoot();
+        }
     }
 
     void Glide()
@@ -42,5 +50,21 @@ public class BookController : MonoBehaviour
             // Apply additional force for gliding
             rb.AddForce(rb.velocity.normalized * glideForce);
         }
+    }
+
+     void Shoot()
+    {
+ 
+           // Calculate the position in front of the book
+        Vector2 spawnPosition = transform.position + transform.right; 
+
+        // Instantiate a projectile at the calculated position
+        GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
+
+        // Get the projectile's Rigidbody2D component
+        Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+
+        // Set the velocity of the projectile based on the book's direction
+        projectileRb.velocity = transform.right * projectileSpeed;
     }
 }
