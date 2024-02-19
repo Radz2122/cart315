@@ -9,7 +9,7 @@ public class BookController : MonoBehaviour
     public GameObject projectilePrefab; // plane projectile prefab
     public float projectileSpeed = 10f; // Adjust the speed of the projectile
     private Rigidbody2D rb;
-
+    private Vector2 spawnPosition;
     void Start()
     {
         // Get the Rigidbody2D component
@@ -54,9 +54,9 @@ public class BookController : MonoBehaviour
 
      void Shoot()
     {
- 
+       
            // Calculate the position in front of the book
-        Vector2 spawnPosition = transform.position + transform.right; 
+         spawnPosition = new Vector2(transform.position.x-0.3f, 0.15f+transform.position.y);
 
         // Instantiate a projectile at the calculated position
         GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
