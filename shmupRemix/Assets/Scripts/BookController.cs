@@ -31,7 +31,7 @@ public class BookController : MonoBehaviour
       
 
          // Shoot projectile when the Q key is pressed
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
         }
