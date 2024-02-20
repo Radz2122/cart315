@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8907818619862481465}
   - component: {fileID: 8907818619862481464}
   - component: {fileID: -2259804748964423514}
-  - component: {fileID: -6718136451575775057}
   - component: {fileID: -6642224996879742480}
+  - component: {fileID: 6684114900732724248}
   m_Layer: 0
   m_Name: bird
   m_TagString: Enemy
@@ -130,8 +130,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &-6718136451575775057
-PolygonCollider2D:
+--- !u!114 &-6642224996879742480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8907818619862481467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f35ff72f3c7f80429fa779b5c13796d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+--- !u!61 &6684114900732724248
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -153,43 +166,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.125, y: -0.21499999}
-      - {x: 0.275, y: -0.155}
-      - {x: 0.385, y: -0.015}
-      - {x: 0.465, y: 0.13499999}
-      - {x: 0.555, y: 0.044999998}
-      - {x: 0.575, y: 0.035}
-      - {x: 0.59499997, y: 0.085}
-      - {x: 0.59499997, y: 0.235}
-      - {x: 0.525, y: 0.295}
-      - {x: 0.465, y: 0.315}
-      - {x: 0.114999995, y: 0.155}
-      - {x: 0.095, y: 0.195}
-      - {x: -0.24499999, y: 0.60499996}
-      - {x: -0.275, y: 0.60499996}
-      - {x: -0.285, y: 0.575}
-      - {x: -0.225, y: 0.044999998}
-      - {x: -0.59499997, y: -0.265}
-      - {x: -0.675, y: -0.345}
-      - {x: -0.675, y: -0.36499998}
-      - {x: -0.66499996, y: -0.385}
-      - {x: -0.635, y: -0.385}
-      - {x: -0.555, y: -0.36499998}
-      - {x: -0.13499999, y: -0.205}
-      - {x: -0.005, y: -0.385}
-      - {x: 0.095, y: -0.385}
---- !u!114 &-6642224996879742480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8907818619862481467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f35ff72f3c7f80429fa779b5c13796d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
+  serializedVersion: 2
+  m_Size: {x: 1.5433333, y: 1.33}
+  m_EdgeRadius: 0
