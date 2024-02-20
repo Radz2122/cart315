@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed = 5f;          // Adjust the enemy's base movement speed
-    public float maxYOffset = 3f;    // Adjust the maximum Y offset from the spawn position
+    public float speed = 5f;          //  the enemy's base movement speed
+    public float maxYOffset = 3f;    //  maximum Y offset from the spawn position
 
     private Rigidbody2D rb;          // Reference to the Rigidbody2D component
 
