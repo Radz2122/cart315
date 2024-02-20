@@ -32,6 +32,7 @@ public class ProjectileManager : MonoBehaviour
             // Destroy the enemy and the projectile
             Destroy(other.gameObject); // Destroy the enemy
             Destroy(gameObject);       // Destroy the projectile
+            Score.S.UpdateScore();     // Update the score
         }
     }
 }
