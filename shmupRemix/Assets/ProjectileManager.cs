@@ -3,7 +3,8 @@ using UnityEngine;
 public class ProjectileManager : MonoBehaviour
 {
   private Rigidbody2D rb;
-
+  public float probabilityDrop=0.2f;
+ public GameObject heartPrefab; 
   void Start(){
     rb = GetComponent<Rigidbody2D>();
   }
@@ -33,6 +34,13 @@ public class ProjectileManager : MonoBehaviour
             Destroy(other.gameObject); // Destroy the enemy
             Destroy(gameObject);       // Destroy the projectile
             Score.S.UpdateScore();     // Update the score
+
+            //maybe spawn a heart
+             if (Random.Range(0f, 1f) < probabilityDrop) // probability 
+            {
+                // Instantiate the heart prefab when the enemy dies
+                Instantiate(heartPrefab, transform.position, Quaternion.identity);
+            }
         }
     }
 }

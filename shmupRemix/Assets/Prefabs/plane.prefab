@@ -146,3 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8984fc286ed334b94128bbfaed6aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  probabilityDrop: 0.2
+  heartPrefab: {fileID: 62210281640567324, guid: 9952d90bab045184dbf96bc5e1807b8e, type: 3}

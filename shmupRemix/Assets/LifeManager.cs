@@ -13,7 +13,17 @@ public class LifeManager : MonoBehaviour
         currentLives = startingLives;
         UpdateLivesText();
     }
+    //add life only if they ar enot maxed out
+public void AddLife()
+    {
+        if(currentLives < startingLives){
+            currentLives+=1;
 
+        // Update the UI text to display the current lives
+        UpdateLivesText();
+        }
+        
+    }
     public void LoseLife()
     {
         currentLives--;

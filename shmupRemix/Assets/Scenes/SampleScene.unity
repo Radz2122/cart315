@@ -257,7 +257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &740240734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,9 +445,10 @@ GameObject:
   - component: {fileID: 1198809709}
   - component: {fileID: 1198809708}
   - component: {fileID: 1198809707}
+  - component: {fileID: 1198809710}
   m_Layer: 0
   m_Name: book
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -604,6 +605,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1198809710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198809703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4f5e258ab370746a527c6d89cf3778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingLives: 3
+  livesText: {fileID: 1910634082}
 --- !u!1 &1356333323
 GameObject:
   m_ObjectHideFlags: 0
