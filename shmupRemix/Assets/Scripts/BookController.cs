@@ -10,10 +10,17 @@ public class BookController : MonoBehaviour
     public float projectileSpeed = 10f; // Adjust the speed of the projectile
     private Rigidbody2D rb;
     private Vector2 spawnPosition;
+    private LifeManager lifeManager;
     void Start()
     {
         // Get the Rigidbody2D component
         rb = GetComponent<Rigidbody2D>();
+
+        lifeManager = FindObjectOfType<LifeManager>();
+        if (lifeManager == null)
+        {
+            Debug.LogError("LifeManager not found in the scene.");
+        }
     }
 
     void Update()
@@ -52,8 +59,19 @@ public class BookController : MonoBehaviour
         Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
 
         // Set the velocity of the projectile based on the book's direction
-        projectileRb.velocity = transform.right * projectileSpeed;
+        projectileRb.velocity = transform.right * projectileSpeed;   
+    }
+     void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            // Call the LoseLife method in the LifeManager script
+            if (lifeManager != null)
+            {
+                lifeManager.LoseLife();
+            }
 
-     
+            // Handle other actions related to player-enemy interaction if needed
+        }
     }
 }
