@@ -27,5 +27,10 @@ public class Score : MonoBehaviour
         score+=1;
         scoreText.text="SCORE: "+score.ToString();
     }
+     public void UpdateScore2()
+    {
+        score+=2;
+        scoreText.text="SCORE: "+score.ToString();
+    }
     
 }

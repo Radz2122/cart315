@@ -30,6 +30,7 @@ public class ProjectileManager : MonoBehaviour
         // Check if the projectile hits an enemy
         if (other.CompareTag("Enemy"))
         {
+        
             // Destroy the enemy and the projectile
             Destroy(other.gameObject); // Destroy the enemy
             Destroy(gameObject);       // Destroy the projectile
@@ -41,6 +42,15 @@ public class ProjectileManager : MonoBehaviour
                 // Instantiate the heart prefab when the enemy dies
                 Instantiate(heartPrefab, transform.position, Quaternion.identity);
             }
+        }
+        if (other.CompareTag("Enemy2"))
+        {
+        
+            // Destroy the enemy and the projectile
+            Destroy(other.gameObject); // Destroy the enemy
+            Destroy(gameObject);       // Destroy the projectile
+            Score.S.UpdateScore2();     // Update the score
+
         }
     }
 }
