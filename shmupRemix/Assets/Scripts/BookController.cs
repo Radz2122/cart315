@@ -11,6 +11,10 @@ public class BookController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 spawnPosition;
     private LifeManager lifeManager;
+     private AudioSource audioSource;
+      public AudioClip hitSound;        // Sound effect for getting hit
+    public AudioClip shootSound;      // Sound effect for shooting
+    public AudioClip collectSound; // sound effect for collecting hearts
     void Start()
     {
         // Get the Rigidbody2D component
@@ -21,6 +25,9 @@ public class BookController : MonoBehaviour
         {
             Debug.LogError("LifeManager not found in the scene.");
         }
+
+         // Get the AudioSource component attached to the character
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -35,12 +42,13 @@ public class BookController : MonoBehaviour
         // Apply force for movement
         rb.velocity = new Vector2(direction.x * speed, direction.y * speed);
 
-      
 
          // Shoot projectile when the Q key is pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
+            // Play shoot sound effect
+            PlaySound(shootSound);
         }
 
     }
@@ -70,8 +78,27 @@ public class BookController : MonoBehaviour
             {
                 lifeManager.LoseLife();
             }
+ // Play hit sound effect
+            PlaySound(hitSound);
+        }
 
-            // Handle other actions related to player-enemy interaction if needed
+        if (other.CompareTag("heart"))
+        {
+            PlaySound(collectSound);
+        }
+    }
+
+       void PlaySound(AudioClip sound)
+    {
+        // Check if AudioSource and AudioClip are assigned
+        if (audioSource != null && sound != null)
+        {
+            // Play the specified sound effect
+            audioSource.PlayOneShot(sound);
+        }
+        else
+        {
+            Debug.LogError("AudioSource or AudioClip is missing!");
         }
     }
 }
