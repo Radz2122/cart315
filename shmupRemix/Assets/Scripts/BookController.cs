@@ -9,7 +9,7 @@ public class BookController : MonoBehaviour
     public GameObject projectilePrefab; // plane projectile prefab
     public float projectileSpeed = 10f; // Adjust the speed of the projectile
     private Rigidbody2D rb;
-    private Vector2 spawnPosition;
+    private Vector2 spawnPosition;// Position to spawn the projectile
     private LifeManager lifeManager;
      private AudioSource audioSource;
       public AudioClip hitSound;        // Sound effect for getting hit

@@ -16,12 +16,6 @@ public class ProjectileManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        //if it is still on screen and touches an enemy...
-        if (transform.position.x<=10f)
-        {
-            //insert code to kill enemy
-        }
       
     }
     //destroy enemy and projectile on collision
@@ -32,8 +26,8 @@ public class ProjectileManager : MonoBehaviour
         {
         
             // Destroy the enemy and the projectile
-            Destroy(other.gameObject); // Destroy the enemy
-            Destroy(gameObject);       // Destroy the projectile
+            Destroy(other.gameObject); 
+            Destroy(gameObject);       
             Score.S.UpdateScore();     // Update the score
 
             //maybe spawn a heart
@@ -45,10 +39,9 @@ public class ProjectileManager : MonoBehaviour
         }
         if (other.CompareTag("Enemy2"))
         {
-        
             // Destroy the enemy and the projectile
-            Destroy(other.gameObject); // Destroy the enemy
-            Destroy(gameObject);       // Destroy the projectile
+            Destroy(other.gameObject); 
+            Destroy(gameObject);      
             Score.S.UpdateScore2();     // Update the score
 
         }
