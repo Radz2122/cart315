@@ -768,6 +768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 619394802}
   - component: {fileID: 619394801}
+  - component: {fileID: 619394803}
   m_Layer: 0
   m_Name: Global Light 2D
   m_TagString: Untagged
@@ -840,6 +841,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &619394803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619394800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd8bc69a6d0f26b49aeb17d1bb64746d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalLight2D: {fileID: 619394801}
+  newLightIntensity: 0.5
 --- !u!1 &758471890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,8 +1890,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00454998, y: -0.008250028, z: 0}
-    m_Extent: {x: 1.00085, y: 0.99845004, z: 0}
+    m_Center: {x: -0.00080001354, y: -0.008600026, z: 0}
+    m_Extent: {x: 0.9983, y: 0.99950004, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
