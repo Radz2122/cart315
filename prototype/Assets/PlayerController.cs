@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5f;          // Adjust the speed of the plane
-    public float glideForce = 2f;     // Adjust the force applied for gliding
-    public float maxGlideSpeed = 8f;  // Adjust the maximum gliding speed
+    public float speed = 5f;          // Adjust the speed o
+    
 
     private Rigidbody2D rb;
  
