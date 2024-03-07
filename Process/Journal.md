@@ -17,7 +17,7 @@ Challenge-> difficult-> clues-> constraints-> paths-> multiples ways to solve-> 
 
 Engagement-> fun vs frustration-> trial and error-> loops
 
-## Desing values: 
+## Design values: 
 Challenge-> mental challenge
 
 Decision-making-> in puzzles (limited chances), or chosing routes
