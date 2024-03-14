@@ -43,7 +43,12 @@ In this game concept, players descend into a bottomless pit (an ancient crater) 
 
 Initially, my focus with this prototype was to experiment with lighting effects. I aimed to create an immersive experience by dimming the game environment and restricting the player's vision to a small circular range. However, I also wanted to explore the possibility of dynamically restoring light during gameplay, a feature that I successfully implemented. Another aspect I wanted to assess was the use of popup dialogues. I designed dialogues to appear when players interacted with specific objects, such as the light switch that illuminates the room when activated. Visually, I constructed a dungeon-like room using online sprites for both the environment and characters. While the prototype's aesthetics lean towards the higher fidelity end, they will be worked on soon.
 
+![prototype1sample1](https://github.com/Radz2122/cart315/assets/70171361/6cd11d1c-32db-47a8-a461-aba157f839a5)
+![prototype1sample2](https://github.com/Radz2122/cart315/assets/70171361/ed50a96e-0e4b-4820-9e52-dc71852db123)
+![prototype1sample3](https://github.com/Radz2122/cart315/assets/70171361/b14f2a5a-6f01-49f2-9e99-47ceaebce2c1)
+![prototype1sample4](https://github.com/Radz2122/cart315/assets/70171361/49efbda3-0f6d-4ddf-919d-38c647c5eedf)
+
 Feedback from testing highlighted an issue where it wasn't immediately clear that the light surrounding the character emanated from their "flame friend." Consequently, I plan to adjust the light tint in the next iteration. Despite this, the controls were deemed intuitive and will remain unchanged for now, although I intend to enhance the character's walking animations and overall smoothness.
 
-The players were drawn to the pile of coins within the darkened room, validating my experiment to lure them with a potential trap, which proved successful.  Overall, I think I got the information I needed concerning the lighting, now I also want to try integrating a puzzle into the next prototype.
+The players were drawn to the pile of coins within the darkened room, validating my experiment to lure them with a potential trap, which proved successful.  Overall, I think I got the information I needed concerning the lighting, now I want to try integrating a puzzle into the next prototype.
 
