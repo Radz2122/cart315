@@ -56,15 +56,18 @@ The players were drawn to the pile of coins within the darkened room, validating
 
 For this experimental prototype, I aimed to create a moving maze level. Initially, I sketched out the concept on paper to test out various components. The maze incorporates several elements: a designated set of enemies highlighted in pink, two movable walls denoted by blue markings, and an exit that, indicated in purple (refer to Figure 1). To manipulate the walls and the exit, players must pull corresponding switches, color-coded to match each element. Thus, players navigate the maze, locating and activating switches to unlock doors and ultimately escape. Failure to trigger the switches and discover the exit prompts a notification (refer to Figure 2).
 
+![figure1](https://github.com/Radz2122/cart315/assets/70171361/524c57e0-f8dd-42d2-9e2d-a44c6e00476c)
 Figure 1.
- 
+
+ ![figure2](https://github.com/Radz2122/cart315/assets/70171361/169f1019-4ddc-43b4-8d01-781cbdc03350)
 Figure 2.
 
 During playtesting, I observed that when players had a full view of the maze, escaping and solving the puzzle became overly simple. To counteract this, I implemented a method to obstruct their vision: a piece of paper with a central cutout, allowing only partial visibility of the map (refer to Figure 3). This adjustment proved effective, as players now took longer to discover both the maze's exit and its switches. Notably, players were not provided with initial guidance; they were merely instructed to locate the maze's exit. To provide guidance akin to in-game pop-ups, I introduced cards at specific points during their progress (refer to Figure 4). For instance, upon reaching a switch, I handed them a "You unlocked a door" card, accompanied by an explanation of its significance.
 
-
+![figure3](https://github.com/Radz2122/cart315/assets/70171361/3fb757fc-7d63-44d9-b5d5-1486368662df)
 Figure 3.
 
+![figure4](https://github.com/Radz2122/cart315/assets/70171361/aba2bd32-7331-43f5-b6b9-7e9b66b7f3a9)
 Figure 4.
 
 The primary purpose of this prototype was to test the maze, its various components, and its mechanics. Through testing, I gained valuable insights into its layout and was inspired to incorporate elements such as moving walls, which were not initially part of the design. Moving forward, my aim is to integrate these new ideas into Unity. I plan to focus on implementing the maze, enemies, and obstructed vision to observe how players navigate through it and to gauge the difficulty level effectively.
