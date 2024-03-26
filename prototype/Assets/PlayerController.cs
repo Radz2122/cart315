@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (horizontalInput < 0) // Moving left
         {
+
             spriteRenderer.flipX = true; // Flip horizontally
         }
 
