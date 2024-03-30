@@ -9,6 +9,9 @@ public class FlameController : MonoBehaviour
     // Offset to adjust companion's position when character faces different directions
     public float xOffsetWhenFacingRight = 0.4f;
     public float xOffsetWhenFacingLeft = -0.4f;
+     public GameObject projectilePrefab; //  projectile prefab
+    public float projectileSpeed = 10f; // Adjust the speed of the projectile
+    private Vector2 spawnPosition;// Position to spawn the projectile
 
     void Start()
     {
@@ -43,5 +46,26 @@ public class FlameController : MonoBehaviour
                 companionSpriteRenderer.flipX = false;
             }
         }
+
+          // Shoot projectile when the space key is pressed
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
+    }
+           void Shoot()
+    {
+       
+           // Calculate the position the     projectile is gonna spawn at
+         spawnPosition = new Vector2(transform.position.x, transform.position.y-0.01f);
+
+        // Instantiate a projectile at the calculated position
+        GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
+
+        // Get the projectile's Rigidbody2D component
+        Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+
+        // Set the velocity of the projectile based on the book's direction
+        projectileRb.velocity = transform.right * projectileSpeed;   
     }
 }

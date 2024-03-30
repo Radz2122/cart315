@@ -3,10 +3,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;          // Adjust the speed o
-    
 
     private Rigidbody2D rb;
      private SpriteRenderer spriteRenderer;
+ 
  
     void Start()
     {
@@ -39,7 +39,9 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(direction.x * speed, direction.y * speed);
 
 
+       
     }
+
 
 
 }
