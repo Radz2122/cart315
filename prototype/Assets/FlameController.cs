@@ -53,7 +53,7 @@ public class FlameController : MonoBehaviour
             Shoot();
         }
     }
-           void Shoot()
+    void Shoot()
     {
        
            // Calculate the position the     projectile is gonna spawn at
@@ -65,7 +65,13 @@ public class FlameController : MonoBehaviour
         // Get the projectile's Rigidbody2D component
         Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
 
-        // Set the velocity of the projectile based on the book's direction
-        projectileRb.velocity = transform.right * projectileSpeed;   
+        // Set the velocity of the projectile based on the characters's direction
+        // projectileRb.velocity = transform.right * projectileSpeed;   
+         // Determine the direction of the projectile based on the character's facing direction
+    Vector2 shootDirection = characterSpriteRenderer.flipX ? Vector2.left : Vector2.right;
+
+    // Set the velocity of the projectile based on the character's direction
+    projectileRb.velocity = shootDirection * projectileSpeed;
     }
+  
 }
