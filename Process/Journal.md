@@ -91,8 +91,8 @@ In the last phase, I experimented with utilizing light sources and their attribu
 ![prototype2-iteration](https://github.com/Radz2122/cart315/assets/70171361/f5fda19b-c002-40af-a2e6-5fce3564427e)
 Figure 3
 
-#Prototyping Stage 4
-##Theme change, character tweaking and start of combat system
+# Prototyping Stage 4
+## Theme change, character tweaking and start of combat system
 
 In this iteration, I tried to redo the design theme of my game, so I opted for a chess-inspired motif because of the background tiles. (See Figure 1) Enemies now take the form of chess pieces and adhere to chess movement rules. The player embodies a pawn trying to reach the opposite end of the chessboard to resurrect the queen. Accumulating a specific amount of currency is necessary to reach her, thus the player must gather all coins scattered throughout the maze before rescue becomes feasible. At present, player interaction with objects or foes is not possible.
 
