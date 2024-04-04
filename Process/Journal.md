@@ -77,12 +77,15 @@ The primary purpose of this prototype was to test the maze, its various componen
 
 In this iteration of the prototype, I've implemented the maze design into Unity. To enhance the overall design, I included background tiles. (See Figure 1) The coins positioned at the far right side of the map are the player's ultimate objective. To finish the puzzle and the game, the player has to navigate through the maze to reach these coins.
 
+![prototype2-iteration1](https://github.com/Radz2122/cart315/assets/70171361/54f61fd9-a7a2-4428-892a-e75144ddbe4f)
 Figure 1
 
 I also introduced enemies from my previous prototype to evaluate their placements and lay the groundwork for a combat system in upcoming iterations. (Figure 2) Scaling objects posed a challenge, particularly ensuring the walls were large enough to obstruct certain paths without intersecting each other. Similarly, sizing the enemies was a hard task, as they couldn't be overly big, yet they needed to be noticeable enough for players to react promptly.
 
+![prototype2-iteration-v2](https://github.com/Radz2122/cart315/assets/70171361/d2e146fb-4ccf-4130-a5b1-d5a57901b15f)
 Figure 2
 
 In the last phase, I experimented with utilizing light sources and their attributes to impede the player's visibility, similar to my earlier prototype. My objective was to assess its impact within a maze environment and whether it would overly complicate navigation. (See Figure 3) Following testing, it became apparent that players might struggle to navigate the maze, especially when the light source is limited. This could lead to frustration, considering the inherent complexity of maze navigation. To address this, for the next iteration, I plan to fine-tune the lighting properties or introduce a power-up mechanic that enhances visibility. Also, I want to start working on the combat system.
 
+![prototype2-iteration](https://github.com/Radz2122/cart315/assets/70171361/f5fda19b-c002-40af-a2e6-5fce3564427e)
 Figure 3
