@@ -72,4 +72,17 @@ Figure 4.
 
 The primary purpose of this prototype was to test the maze, its various components, and its mechanics. Through testing, I gained valuable insights into its layout and was inspired to incorporate elements such as moving walls, which were not initially part of the design. Moving forward, my aim is to integrate these new ideas into Unity. I plan to focus on implementing the maze, enemies, and obstructed vision to observe how players navigate through it and to gauge the difficulty level effectively.
 
+# Prototyping Stage 3
+## Unity integration
 
+In this iteration of the prototype, I've implemented the maze design into Unity. To enhance the overall design, I included background tiles. (See Figure 1) The coins positioned at the far right side of the map are the player's ultimate objective. To finish the puzzle and the game, the player has to navigate through the maze to reach these coins.
+
+Figure 1
+
+I also introduced enemies from my previous prototype to evaluate their placements and lay the groundwork for a combat system in upcoming iterations. (Figure 2) Scaling objects posed a challenge, particularly ensuring the walls were large enough to obstruct certain paths without intersecting each other. Similarly, sizing the enemies was a hard task, as they couldn't be overly big, yet they needed to be noticeable enough for players to react promptly.
+
+Figure 2
+
+In the last phase, I experimented with utilizing light sources and their attributes to impede the player's visibility, similar to my earlier prototype. My objective was to assess its impact within a maze environment and whether it would overly complicate navigation. (See Figure 3) Following testing, it became apparent that players might struggle to navigate the maze, especially when the light source is limited. This could lead to frustration, considering the inherent complexity of maze navigation. To address this, for the next iteration, I plan to fine-tune the lighting properties or introduce a power-up mechanic that enhances visibility. Also, I want to start working on the combat system.
+
+Figure 3
