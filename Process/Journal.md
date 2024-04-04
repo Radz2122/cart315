@@ -86,3 +86,27 @@ Figure 2
 In the last phase, I experimented with utilizing light sources and their attributes to impede the player's visibility, similar to my earlier prototype. My objective was to assess its impact within a maze environment and whether it would overly complicate navigation. (See Figure 3) Following testing, it became apparent that players might struggle to navigate the maze, especially when the light source is limited. This could lead to frustration, considering the inherent complexity of maze navigation. To address this, for the next iteration, I plan to fine-tune the lighting properties or introduce a power-up mechanic that enhances visibility. Also, I want to start working on the combat system.
 
 Figure 3
+
+#Prototyping Stage 4
+##Theme change, character tweaking and start of combat system
+
+In this iteration, I tried to redo the design theme of my game, so I opted for a chess-inspired motif because of the background tiles. (See Figure 1) Enemies now take the form of chess pieces and adhere to chess movement rules. The player embodies a pawn trying to reach the opposite end of the chessboard to resurrect the queen. Accumulating a specific amount of currency is necessary to reach her, thus the player must gather all coins scattered throughout the maze before rescue becomes feasible. At present, player interaction with objects or foes is not possible.
+
+Figure 1
+
+Additionally, I introduced a shooting mechanism where the player’s fire companion launches fireballs upon pressing the spacebar. (Refer to Figure 2) These projectiles eliminate enemy pieces. However, it is restricted to the X-axis for targeting, so I had to ensure that the enemy placement would adapt to the constraint.
+
+Figure 2 (the map is shown with light here to show the projectile but it will be dark).
+
+Lastly, I implemented maze wall manipulation, experimenting with various configurations to control player access across the map while obstructing certain paths. This process was time-consuming, necessitating thorough consideration of potential player routes. Currently, the maze has two configurations (Figures 3 and 4), with walls adjustable between configurations via the Q key (for testing). Ultimately, players will engage with a lever in-game to shift the walls.
+
+Figure 3 (The maze tiles are hidden to show the objects on the map better).
+
+
+Figure 4
+
+Looking ahead, my focus for the upcoming week would be refining the enemies, including their movement and their combat mechanics. Additionally, I want to integrate player interactions with the coins and the lever. If time permits, I would like to incorporate interactive items dropped by defeated enemies and rework the lighting, because the current one makes navigating the maze difficult. (Refer to Figure 5)
+
+Figure 5 featuring a hidden enemy on the left, the player, and some coins on the right.
+
+
