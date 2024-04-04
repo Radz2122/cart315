@@ -78,6 +78,7 @@ The primary purpose of this prototype was to test the maze, its various componen
 In this iteration of the prototype, I've implemented the maze design into Unity. To enhance the overall design, I included background tiles. (See Figure 1) The coins positioned at the far right side of the map are the player's ultimate objective. To finish the puzzle and the game, the player has to navigate through the maze to reach these coins.
 
 ![prototype2-iteration1](https://github.com/Radz2122/cart315/assets/70171361/54f61fd9-a7a2-4428-892a-e75144ddbe4f)
+
 Figure 1
 
 I also introduced enemies from my previous prototype to evaluate their placements and lay the groundwork for a combat system in upcoming iterations. (Figure 2) Scaling objects posed a challenge, particularly ensuring the walls were large enough to obstruct certain paths without intersecting each other. Similarly, sizing the enemies was a hard task, as they couldn't be overly big, yet they needed to be noticeable enough for players to react promptly.
