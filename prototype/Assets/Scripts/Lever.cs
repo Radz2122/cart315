@@ -7,17 +7,24 @@ public class Lever : MonoBehaviour
      private SpriteRenderer leverRenderer; // Reference to the lever's SpriteRenderer component
       public Sprite leverOnSprite; // Reference to the sprite when the lever is on
     public Sprite leverOffSprite; // Reference to the sprite when the lever is off
+    public bool playerIsInFrontOfLever = false; // Indicates whether the player is in front of the lever or not
+    public static Lever Lev;
+     void Awake()
+    {
+        Lev=this;
+    }
       
     void Start(){
         popupText.SetActive(false);
         // Get the SpriteRenderer component attached to the lever GameObject
         leverRenderer = GetComponent<SpriteRenderer>();
+        playerIsInFrontOfLever=false;
       
     }
     void Update()
     {
         // Check for key press (change to your desired key)
-        if (Input.GetKeyDown(KeyCode.E))
+        if (playerIsInFrontOfLever && Input.GetKeyDown(KeyCode.E))
         {
             // Toggle the lever
             ToggleLever();
@@ -39,13 +46,18 @@ public class Lever : MonoBehaviour
             // wallsShifted=false;
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Player")) 
+        if (other.CompareTag("Player")) 
         {
             // Display the popup text
             popupText.SetActive(true);
-
+            playerIsInFrontOfLever = true;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+               popupText.SetActive(false);
+            playerIsInFrontOfLever = false;
     }
 }

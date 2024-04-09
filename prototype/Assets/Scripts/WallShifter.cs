@@ -3,9 +3,7 @@ using UnityEngine;
 public class WallShifter : MonoBehaviour
 {
 
-
-
-    public bool wallsShifted = false; // Indicates whether the walls have been shifted or not
+public bool wallsShifted = false; // Indicates whether the walls have been shifted or not
    
 public static WallShifter WS;
     // Start is called before the first frame update
@@ -18,7 +16,7 @@ public static WallShifter WS;
     void Update()
     {
         // Check for button click input
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Lever.Lev.playerIsInFrontOfLever && Input.GetKeyDown(KeyCode.E))
         {
             if (wallsShifted)
             {
