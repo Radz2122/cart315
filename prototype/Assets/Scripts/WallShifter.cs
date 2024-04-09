@@ -2,13 +2,23 @@ using UnityEngine;
 
 public class WallShifter : MonoBehaviour
 {
-    private bool wallsShifted = false; // Indicates whether the walls have been shifted or not
 
-    // Update is called once per frame
+
+
+    public bool wallsShifted = false; // Indicates whether the walls have been shifted or not
+   
+public static WallShifter WS;
+    // Start is called before the first frame update
+
+    void Awake()
+    {
+        WS=this;
+    }
+   
     void Update()
     {
         // Check for button click input
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (wallsShifted)
             {
@@ -20,6 +30,7 @@ public class WallShifter : MonoBehaviour
                 ShiftWalls();
                 wallsShifted = true;
             }
+           
         }
     }
 
@@ -69,4 +80,6 @@ public class WallShifter : MonoBehaviour
             }
         }
     }
+
+  
 }
