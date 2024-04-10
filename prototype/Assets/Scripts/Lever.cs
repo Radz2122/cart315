@@ -23,18 +23,7 @@ public class Lever : MonoBehaviour
     }
     void Update()
     {
-        // Check for key press (change to your desired key)
-        if (playerIsInFrontOfLever && Input.GetKeyDown(KeyCode.E))
-        {
-            // Toggle the lever
-            ToggleLever();
-
-        }
-
-    }
-      void ToggleLever()
-    {
-        if (WallShifter.WS.wallsShifted==true)
+        if (WallShifter.WS.wallsShifted)
         {
             // Set lever sprite to on sprite
             leverRenderer.sprite = leverOnSprite;
@@ -45,6 +34,7 @@ public class Lever : MonoBehaviour
             leverRenderer.sprite = leverOffSprite;
             // wallsShifted=false;
         }
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -1221,8 +1221,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0053499937, y: 0.003249973, z: 0}
-    m_Extent: {x: 1.00395, y: 0.99784994, z: 0}
+    m_Center: {x: -0.00055000186, y: -0.005799979, z: 0}
+    m_Extent: {x: 0.99745, y: 1.0038999, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2090,8 +2090,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0039000213, y: -0.007000029, z: 0}
-    m_Extent: {x: 1.0028, y: 1.0004001, z: 0}
+    m_Center: {x: 0.00049999356, y: -0.00045001507, z: 0}
+    m_Extent: {x: 0.99689996, y: 0.99865, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4084,8 +4084,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00059998035, y: 0.0014500022, z: 0}
-    m_Extent: {x: 0.9975, y: 0.99565, z: 0}
+    m_Center: {x: 0.0022500157, y: 0.005400002, z: 0}
+    m_Extent: {x: 0.99675, y: 1.0018001, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5991,8 +5991,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0053500235, y: -0.00054997206, z: 0}
-    m_Extent: {x: 1.00125, y: 0.99785, z: 0}
+    m_Center: {x: -0.0063000023, y: 0.002849996, z: 0}
+    m_Extent: {x: 1.0015, y: 0.99985, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7063,7 +7063,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1109386020}
   - component: {fileID: 1109386019}
-  - component: {fileID: 1109386018}
   - component: {fileID: 1109386017}
   - component: {fileID: 1109386021}
   m_Layer: 0
@@ -7086,7 +7085,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0000000037252903, y: -0.014978394}
+  m_Offset: {x: -0.0055474043, y: -0.014978394}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7097,29 +7096,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14988536, y: 0.18995678}
+  m_Size: {x: 0.25713348, y: 0.18995678}
   m_EdgeRadius: 0
---- !u!95 &1109386018
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109386015}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d9eb2104e7eecd845825c352d05e8046, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &1109386019
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7269,8 +7247,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0038999915, y: 0.0028000176, z: 0}
-    m_Extent: {x: 1.0041001, y: 0.99549997, z: 0}
+    m_Center: {x: -0.0026999712, y: 0.0042000115, z: 0}
+    m_Extent: {x: 1.0056, y: 0.99680007, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

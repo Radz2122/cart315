@@ -12,21 +12,25 @@ public static WallShifter WS;
     {
         WS=this;
     }
-   
+   void Start()
+    {
+       wallsShifted=false;
+    }
     void Update()
     {
         // Check for button click input
         if (Lever.Lev.playerIsInFrontOfLever && Input.GetKeyDown(KeyCode.E))
         {
-            if (wallsShifted)
-            {
-                RevertWalls();
-                wallsShifted = false;
-            }
-            else
+            if (!wallsShifted)
             {
                 ShiftWalls();
                 wallsShifted = true;
+                
+            }
+            else
+            {
+                RevertWalls();
+                wallsShifted = false;
             }
            
         }
