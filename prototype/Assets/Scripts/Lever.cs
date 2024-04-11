@@ -9,6 +9,7 @@ public class Lever : MonoBehaviour
     public Sprite leverOffSprite; // Reference to the sprite when the lever is off
     public bool playerIsInFrontOfLever = false; // Indicates whether the player is in front of the lever or not
     public static Lever Lev;
+   
      void Awake()
     {
         Lev=this;

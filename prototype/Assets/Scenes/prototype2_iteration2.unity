@@ -1221,8 +1221,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00090000033, y: 0.0054499805, z: 0}
-    m_Extent: {x: 0.99469995, y: 1.00295, z: 0}
+    m_Center: {x: -0.0014500022, y: 0.00055000186, z: 0}
+    m_Extent: {x: 0.99775, y: 0.99654996, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1337,6 +1337,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1a1131ee32dd84f939b352da176ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 519420031}
+  zoomedOutSize: 12
+  zoomedInSize: 2.5
+  wallShiftDuration: 5
+  globalLight2D: {fileID: 619394801}
+  newLightIntensity: 0.6
+  popupText: {fileID: 1608849547}
   wallsShifted: 0
 --- !u!1 &201699679
 GameObject:
@@ -2090,8 +2097,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0032000542, y: 0.004949987, z: 0}
-    m_Extent: {x: 1.0036, y: 1.0041499, z: 0}
+    m_Center: {x: -0.00055003166, y: 0.00015002489, z: 0}
+    m_Extent: {x: 1.00755, y: 1.0058501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4084,8 +4091,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00040000677, y: -0.00014999509, z: 0}
-    m_Extent: {x: 0.9972, y: 0.99925005, z: 0}
+    m_Center: {x: -0.002849996, y: -0.004400015, z: 0}
+    m_Extent: {x: 0.99655, y: 1.0009, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6024,8 +6031,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0012999773, y: 0.00015002489, z: 0}
-    m_Extent: {x: 1.0037, y: 1.0014501, z: 0}
+    m_Center: {x: -0.0024499893, y: 0.0035000145, z: 0}
+    m_Extent: {x: 0.99615, y: 0.99670005, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7280,8 +7287,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0015999675, y: 0.0036500096, z: 0}
-    m_Extent: {x: 1.0019, y: 0.99725, z: 0}
+    m_Center: {x: -0.002150029, y: 0.0043500066, z: 0}
+    m_Extent: {x: 0.99695003, y: 1.0006499, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -13414,6 +13421,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1a1131ee32dd84f939b352da176ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 519420031}
+  zoomedOutSize: 12
+  zoomedInSize: 2.5
+  wallShiftDuration: 5
+  globalLight2D: {fileID: 619394801}
+  newLightIntensity: 0.6
+  popupText: {fileID: 1608849547}
   wallsShifted: 0
 --- !u!1 &2128596452
 GameObject:

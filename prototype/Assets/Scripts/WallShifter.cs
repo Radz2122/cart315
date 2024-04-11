@@ -1,87 +1,170 @@
 using UnityEngine;
+using System.Collections;
 
 public class WallShifter : MonoBehaviour
 {
 
-public bool wallsShifted = false; // Indicates whether the walls have been shifted or not
-   
 public static WallShifter WS;
-    // Start is called before the first frame update
-
-    void Awake()
+    public Camera mainCamera; // Reference to main camera
+    public float zoomedOutSize = 12f; // Orthographic size when zoomed out
+    public float zoomedInSize = 2.5f; // Orthographic size when zoomed in
+    public float wallShiftDuration = 4f; // Duration of wall shifting animation in seconds
+    public UnityEngine.Rendering.Universal.Light2D globalLight2D; // Reference to the global light
+    public float newLightIntensity; // New intensity the light will have once the lever is pulled and the cam is zoomed out
+public GameObject popupText;//ref to the popup text that appears when player is in front of lever
+    public bool wallsShifted = false; // Indicates whether the walls have been shifted or not
+    private Vector3[] originalPositions; // Array to store the original positions of the walls
+ void Awake()
     {
         WS=this;
     }
-   void Start()
+
+    // Shifts all walls with animation
+    IEnumerator ShiftWallsCoroutine()
     {
-       wallsShifted=false;
+        float elapsedTime = 0f;
+
+        // Get all wall objects in the scene
+        GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall");
+
+        // Store the original positions of the walls
+        originalPositions = new Vector3[walls.Length];
+        for (int i = 0; i < walls.Length; i++)
+        {
+            originalPositions[i] = walls[i].transform.position;
+        }
+
+     // Turn on the light
+        SetLightIntensity(newLightIntensity);
+        // Zoom out the camera
+        while (mainCamera.orthographicSize < zoomedOutSize)
+        {
+            mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, zoomedOutSize, elapsedTime / wallShiftDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Shift the walls
+        while (elapsedTime < wallShiftDuration)
+        {
+            for (int i = 0; i < walls.Length; i++)
+            {
+                WallShiftData wallShiftData = walls[i].GetComponent<WallShiftData>();
+                if (wallShiftData != null)
+                {
+                    Vector3 targetPosition = originalPositions[i] + new Vector3(wallShiftData.shiftAmountX, wallShiftData.shiftAmountY, 0f);
+                    walls[i].transform.position = Vector3.Lerp(originalPositions[i], targetPosition, elapsedTime / wallShiftDuration);
+                }
+            }
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Set the final position of walls
+        for (int i = 0; i < walls.Length; i++)
+        {
+            WallShiftData wallShiftData = walls[i].GetComponent<WallShiftData>();
+            if (wallShiftData != null)
+            {
+                Vector3 targetPosition = originalPositions[i] + new Vector3(wallShiftData.shiftAmountX, wallShiftData.shiftAmountY, 0f);
+                walls[i].transform.position = targetPosition;
+            }
+        }
+
+        wallsShifted = true; // Set wallsShifted to true after shifting walls
+
+        // Turn off the light
+        SetLightIntensity(0.1f);
+
+        // Zoom in the camera
+        while (mainCamera.orthographicSize > zoomedInSize)
+        {
+            mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, zoomedInSize, elapsedTime / wallShiftDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
     }
+
+    // Reverts all walls back to their original positions with animation
+    IEnumerator RevertWallsCoroutine()
+    {
+        float elapsedTime = 0f;
+
+        // Get all wall objects in the scene
+        GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall");
+    // Turn on the light
+        SetLightIntensity(newLightIntensity);
+        // Zoom out the camera
+        while (mainCamera.orthographicSize < zoomedOutSize)
+        {
+            mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, zoomedOutSize, elapsedTime / wallShiftDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Revert the walls to their original positions
+        while (elapsedTime < wallShiftDuration)
+        {
+            for (int i = 0; i < walls.Length; i++)
+            {
+                walls[i].transform.position = Vector3.Lerp(walls[i].transform.position, originalPositions[i], elapsedTime / wallShiftDuration);
+            }
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Set the final position of walls
+        for (int i = 0; i < walls.Length; i++)
+        {
+            walls[i].transform.position = originalPositions[i];
+        }
+
+        wallsShifted = false; // Set wallsShifted to false after reverting walls
+
+        // Turn off the light
+        SetLightIntensity(0.1f);
+
+        // Zoom in the camera
+        while (mainCamera.orthographicSize > zoomedInSize)
+        {
+            mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, zoomedInSize, elapsedTime / wallShiftDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    // Update is called once per frame
     void Update()
     {
         // Check for button click input
         if (Lever.Lev.playerIsInFrontOfLever && Input.GetKeyDown(KeyCode.E))
         {
+            popupText.SetActive(false);//deactivate it
             if (!wallsShifted)
             {
-                ShiftWalls();
-                wallsShifted = true;
-                
+                StartCoroutine(ShiftWallsCoroutine());
             }
             else
             {
-                RevertWalls();
-                wallsShifted = false;
+                StartCoroutine(RevertWallsCoroutine());
             }
-           
         }
     }
 
-    // Shifts all walls at the same time
-    void ShiftWalls()
+    // Set light intensity
+    void SetLightIntensity(float intensity)
     {
-        // Get all wall objects in the scene
-        GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall");
-
-        // Loop through each wall object
-        foreach (GameObject wall in walls)
+        if (globalLight2D != null)
         {
-            // Get the WallShiftData component attached to the wall
-            WallShiftData wallShiftData = wall.GetComponent<WallShiftData>();
-
-            if (wallShiftData != null)
-            {
-                // Get the current position of the wall
-                Vector3 currentPosition = wall.transform.position;
-
-                // Update the position based on the shift amounts from WallShiftData
-                currentPosition.x += wallShiftData.shiftAmountX;
-                currentPosition.y += wallShiftData.shiftAmountY;
-
-                // Set the new position of the wall
-                wall.transform.position = currentPosition;
-            }
+            globalLight2D.intensity = intensity;
+        }
+        else
+        {
+            Debug.LogError("Global Light 2D is not assigned!");
         }
     }
-
-    // Reverts all walls back to their original positions
-    void RevertWalls()
-    {
-        // Get all wall objects in the scene
-        GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall");
-
-        // Loop through each wall object
-        foreach (GameObject wall in walls)
-        {
-            // Get the WallShiftData component attached to the wall
-            WallShiftData wallShiftData = wall.GetComponent<WallShiftData>();
-
-            if (wallShiftData != null)
-            {
-                // Reset the position of the wall to its original position stored in WallShiftData
-                wall.transform.position = wallShiftData.originalPosition;
-            }
-        }
-    }
-
-  
 }
+
+
+
+ 
