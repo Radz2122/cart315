@@ -1,13 +1,14 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5f;          // Adjust the speed o
-
+    public float speed = 5f;          // Adjust the speed of the player
+public int startingCoins = 0;// amount of coins player starts with
+public int currentCoins; // current amount of coins player has
     private Rigidbody2D rb;
      private SpriteRenderer spriteRenderer;
   private LifeManager lifeManager;
- 
+ public Text coinsText;  // Reference to a UI text element to display the  coins
     void Start()
     {
         // Get the Rigidbody2D component
@@ -55,6 +56,20 @@ public class PlayerController : MonoBehaviour
                 lifeManager.LoseLife();
             }
         }
-    }
 
+            if (other.CompareTag("Coins"))
+        {
+           currentCoins++;
+            Debug.Log("Coin collected");
+            // Destroy the coin
+            Destroy(other.gameObject);
+            UpdateCoinText();
+         }
+
+}
+void UpdateCoinText()
+    {
+     // Update the UI text to display the remaining lives
+        coinsText.text = " "+currentCoins.ToString();
+    }
 }

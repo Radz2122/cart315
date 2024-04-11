@@ -1,17 +1,15 @@
 using UnityEngine;
 using System.Collections;
-
 public class WallShifter : MonoBehaviour
 {
-
-public static WallShifter WS;
+    public static WallShifter WS;
     public Camera mainCamera; // Reference to main camera
     public float zoomedOutSize = 12f; // Orthographic size when zoomed out
     public float zoomedInSize = 2.5f; // Orthographic size when zoomed in
     public float wallShiftDuration = 4f; // Duration of wall shifting animation in seconds
     public UnityEngine.Rendering.Universal.Light2D globalLight2D; // Reference to the global light
     public float newLightIntensity; // New intensity the light will have once the lever is pulled and the cam is zoomed out
-public GameObject popupText;//ref to the popup text that appears when player is in front of lever
+    public GameObject popupText;//ref to the popup text that appears when player is in front of lever
     public bool wallsShifted = false; // Indicates whether the walls have been shifted or not
     private Vector3[] originalPositions; // Array to store the original positions of the walls
  void Awake()
