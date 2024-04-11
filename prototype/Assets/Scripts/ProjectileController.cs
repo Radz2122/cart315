@@ -16,13 +16,14 @@ public class ProjectileController : MonoBehaviour
     //destroy enemy and projectile on collision
      void OnTriggerEnter2D(Collider2D other)
     {
+      Destroy(gameObject); 
         // Check if the projectile hits an enemy
         if (other.CompareTag("Enemy"))
         {
         
             // Destroy the enemy and the projectile
             Destroy(other.gameObject); 
-            Destroy(gameObject);       
+                  
 
             //maybe spawn an item
            //  if (Random.Range(0f, 1f) < probabilityDrop) // probability 
