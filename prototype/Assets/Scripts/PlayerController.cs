@@ -6,13 +6,18 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
      private SpriteRenderer spriteRenderer;
- 
+  private LifeManager lifeManager;
  
     void Start()
     {
         // Get the Rigidbody2D component
         rb = GetComponent<Rigidbody2D>();
      spriteRenderer = GetComponent<SpriteRenderer>();
+     lifeManager = FindObjectOfType<LifeManager>();
+        if (lifeManager == null)
+        {
+            Debug.LogError("LifeManager not found in the scene.");
+        }
      
     }
 
@@ -36,12 +41,20 @@ public class PlayerController : MonoBehaviour
         Vector2 direction = new Vector2(horizontalInput, verticalInput).normalized;
 
         // Apply force for movement
-        rb.velocity = new Vector2(direction.x * speed, direction.y * speed);
-
-
-       
+        rb.velocity = new Vector2(direction.x * speed, direction.y * speed);  
     }
 
-
+  void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Debug.Log("Player hit by enemy!");
+            // Call the LoseLife method in the LifeManager script
+            if (lifeManager != null)
+            {
+                lifeManager.LoseLife();
+            }
+        }
+    }
 
 }
