@@ -9,6 +9,7 @@ public int currentCoins; // current amount of coins player has
      private SpriteRenderer spriteRenderer;
   private LifeManager lifeManager;
  public Text coinsText;  // Reference to a UI text element to display the  coins
+ public GameObject bishops;
     void Start()
     {
         // Get the Rigidbody2D component
@@ -46,6 +47,9 @@ public int currentCoins; // current amount of coins player has
             // Apply force for movement
             rb.velocity = new Vector2(direction.x * speed, direction.y * speed);  
         }
+         if(currentCoins>=4){
+                bishops.SetActive(false);
+            }
     }
 
   void OnTriggerEnter2D(Collider2D other)
@@ -60,13 +64,16 @@ public int currentCoins; // current amount of coins player has
             }
         }
 
-            if (other.CompareTag("Coins"))
+        if (other.CompareTag("Coins"))
         {
-           currentCoins++;
+           
+          currentCoins++;
             Debug.Log("Coin collected");
             // Destroy the coin
             Destroy(other.gameObject);
             UpdateCoinText();
+            
+           
          }
 
 }
