@@ -24,25 +24,28 @@ public int currentCoins; // current amount of coins player has
 
     void Update()
     {
-        // Get player input for movement
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+    if (WallShifter.WS.canMove)
+        {
+            // Get player input for movement
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
 
-        if (horizontalInput > 0) // Moving right
-        {
+            if (horizontalInput > 0) // Moving right
+            {
             spriteRenderer.flipX = false; // No flip
-        }
-        else if (horizontalInput < 0) // Moving left
-        {
+            }
+            else if (horizontalInput < 0) // Moving left
+            {
 
             spriteRenderer.flipX = true; // Flip horizontally
+            }
+
+            // Calculate movement direction
+            Vector2 direction = new Vector2(horizontalInput, verticalInput).normalized;
+
+            // Apply force for movement
+            rb.velocity = new Vector2(direction.x * speed, direction.y * speed);  
         }
-
-        // Calculate movement direction
-        Vector2 direction = new Vector2(horizontalInput, verticalInput).normalized;
-
-        // Apply force for movement
-        rb.velocity = new Vector2(direction.x * speed, direction.y * speed);  
     }
 
   void OnTriggerEnter2D(Collider2D other)

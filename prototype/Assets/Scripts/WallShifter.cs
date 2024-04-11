@@ -12,6 +12,7 @@ public class WallShifter : MonoBehaviour
     public GameObject popupText;//ref to the popup text that appears when player is in front of lever
     public bool wallsShifted = false; // Indicates whether the walls have been shifted or not
     private Vector3[] originalPositions; // Array to store the original positions of the walls
+    public bool canMove = true; // Indicates whether the player can move or not
  void Awake()
     {
         WS=this;
@@ -40,11 +41,13 @@ public class WallShifter : MonoBehaviour
             mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, zoomedOutSize, elapsedTime / wallShiftDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
+            canMove = false; // Prevent the player from moving while the walls are shifting
         }
 
         // Shift the walls
         while (elapsedTime < wallShiftDuration)
         {
+            
             for (int i = 0; i < walls.Length; i++)
             {
                 WallShiftData wallShiftData = walls[i].GetComponent<WallShiftData>();
@@ -81,6 +84,7 @@ public class WallShifter : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        canMove = true; // Allow the player to move again
     }
 
     // Reverts all walls back to their original positions with animation
@@ -98,11 +102,13 @@ public class WallShifter : MonoBehaviour
             mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, zoomedOutSize, elapsedTime / wallShiftDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
+            canMove = false; // Prevent the player from moving while the walls are shifting
         }
 
         // Revert the walls to their original positions
         while (elapsedTime < wallShiftDuration)
         {
+            
             for (int i = 0; i < walls.Length; i++)
             {
                 walls[i].transform.position = Vector3.Lerp(walls[i].transform.position, originalPositions[i], elapsedTime / wallShiftDuration);
@@ -118,7 +124,7 @@ public class WallShifter : MonoBehaviour
         }
 
         wallsShifted = false; // Set wallsShifted to false after reverting walls
-
+     
         // Turn off the light
         SetLightIntensity(0.1f);
 
@@ -129,6 +135,7 @@ public class WallShifter : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+           canMove = true; // Allow the player to move again
     }
 
     // Update is called once per frame
