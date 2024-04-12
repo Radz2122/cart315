@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class Lever : MonoBehaviour
 {
     public GameObject popupText;
+    public GameObject popupTextCannotUseLever;// text that appears when player is in front of lever but cannot use it
+
      private SpriteRenderer leverRenderer; // Reference to the lever's SpriteRenderer component
       public Sprite leverOnSprite; // Reference to the sprite when the lever is on
     public Sprite leverOffSprite; // Reference to the sprite when the lever is off
@@ -17,6 +19,7 @@ public class Lever : MonoBehaviour
       
     void Start(){
         popupText.SetActive(false);
+        popupTextCannotUseLever.SetActive(false);
         // Get the SpriteRenderer component attached to the lever GameObject
         leverRenderer = GetComponent<SpriteRenderer>();
         playerIsInFrontOfLever=false;
@@ -41,14 +44,24 @@ public class Lever : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            // Display the popup text
-            popupText.SetActive(true);
-            playerIsInFrontOfLever = true;
+            if (WallShifter.WS.canUseLever)
+            {
+                // Display the popup text
+                popupText.SetActive(true);
+                playerIsInFrontOfLever = true;
+            }
+            else{
+                popupTextCannotUseLever.SetActive(true);
+                playerIsInFrontOfLever = true;
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-               popupText.SetActive(false);
-            playerIsInFrontOfLever = false;
+         
+                popupText.SetActive(false);
+                popupTextCannotUseLever.SetActive(false);
+                playerIsInFrontOfLever = false;
+            
     }
 }

@@ -16,6 +16,7 @@ public class WallShifter : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip wallMoveSound; // Sound effect for the wall movement
     public AudioClip leverSound; // Sound effect for the lever
+    public bool canUseLever = true; // Indicates whether the lever can be used or not
 
  void Awake()
     {
@@ -24,6 +25,14 @@ public class WallShifter : MonoBehaviour
   void Start()
     {
         audioSource = GetComponent<AudioSource>();
+    }
+     private IEnumerator LeverCooldownCoroutine()
+    {
+        // Wait for 10 seconds
+        yield return new WaitForSeconds(30f);
+
+        // Allow the lever to be used again
+        canUseLever = true;
     }
 
     // Shifts all walls with animation
@@ -114,8 +123,7 @@ public class WallShifter : MonoBehaviour
             yield return null;
             canMove = false; // Prevent the player from moving while the walls are shifting
         }
-        AudioSource.PlayClipAtPoint(wallMoveSound, transform.position, 1f);
-
+    AudioSource.PlayClipAtPoint(wallMoveSound, transform.position, 1f);
         // Revert the walls to their original positions
         while (elapsedTime < wallShiftDuration)
         {
@@ -152,8 +160,9 @@ public class WallShifter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         // Check for button click input
-        if (Lever.Lev.playerIsInFrontOfLever && Input.GetKeyDown(KeyCode.E))
+        if (Lever.Lev.playerIsInFrontOfLever && Input.GetKeyDown(KeyCode.E) && canUseLever)
         {
             audioSource.PlayOneShot(leverSound);
             
@@ -166,6 +175,8 @@ public class WallShifter : MonoBehaviour
             {
                 StartCoroutine(RevertWallsCoroutine());
             }
+            canUseLever = false; // Prevent the lever from being used for a cooldown period
+            StartCoroutine(LeverCooldownCoroutine());
         }
     }
 
