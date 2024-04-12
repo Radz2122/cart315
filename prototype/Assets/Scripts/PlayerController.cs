@@ -10,6 +10,10 @@ public int currentCoins; // current amount of coins player has
   private LifeManager lifeManager;
  public Text coinsText;  // Reference to a UI text element to display the  coins
  public GameObject bishops;
+  private AudioSource audioSource;
+      public AudioClip hitSound;        // Sound effect for getting hit
+    public AudioClip collectSound; // sound effect for collecting coins
+    
     void Start()
     {
         // Get the Rigidbody2D component
@@ -20,7 +24,8 @@ public int currentCoins; // current amount of coins player has
         {
             Debug.LogError("LifeManager not found in the scene.");
         }
-     
+     // Get the AudioSource component attached to the character
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -61,6 +66,8 @@ public int currentCoins; // current amount of coins player has
             if (lifeManager != null)
             {
                 lifeManager.LoseLife();
+
+                  audioSource.PlayOneShot(hitSound);
             }
         }
 
@@ -72,6 +79,7 @@ public int currentCoins; // current amount of coins player has
             // Destroy the coin
             Destroy(other.gameObject);
             UpdateCoinText();
+             audioSource.PlayOneShot(collectSound);
             
            
          }

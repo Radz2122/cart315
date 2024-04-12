@@ -12,6 +12,8 @@ public class FireController : MonoBehaviour
      public GameObject projectilePrefab; //  projectile prefab
     public float projectileSpeed = 10f; // Adjust the speed of the projectile
     private Vector2 spawnPosition;// Position to spawn the projectile
+      private AudioSource audioSource;
+     public AudioClip shootSound;      // Sound effect for shooting
 
     void Start()
     {
@@ -20,7 +22,9 @@ public class FireController : MonoBehaviour
 
         // Get the SpriteRenderer component from the main character's GameObject
             characterSpriteRenderer = character.GetComponent<SpriteRenderer>();
-            companionSpriteRenderer = GetComponent<SpriteRenderer>();    
+            companionSpriteRenderer = GetComponent<SpriteRenderer>();   
+             // Get the AudioSource component attached to the character
+        audioSource = GetComponent<AudioSource>(); 
     }
 
     void Update()
@@ -50,6 +54,7 @@ public class FireController : MonoBehaviour
           // Shoot projectile when the space key is pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
+             audioSource.PlayOneShot(shootSound);
             Shoot();
         }
     }

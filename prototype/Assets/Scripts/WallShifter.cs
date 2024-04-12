@@ -13,14 +13,23 @@ public class WallShifter : MonoBehaviour
     public bool wallsShifted = false; // Indicates whether the walls have been shifted or not
     private Vector3[] originalPositions; // Array to store the original positions of the walls
     public bool canMove = true; // Indicates whether the player can move or not
+    private AudioSource audioSource;
+    public AudioClip wallMoveSound; // Sound effect for the wall movement
+    public AudioClip leverSound; // Sound effect for the lever
+
  void Awake()
     {
         WS=this;
+    }
+  void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Shifts all walls with animation
     IEnumerator ShiftWallsCoroutine()
     {
+        
         float elapsedTime = 0f;
 
         // Get all wall objects in the scene
@@ -43,7 +52,7 @@ public class WallShifter : MonoBehaviour
             yield return null;
             canMove = false; // Prevent the player from moving while the walls are shifting
         }
-
+        AudioSource.PlayClipAtPoint(wallMoveSound, transform.position, 1f);
         // Shift the walls
         while (elapsedTime < wallShiftDuration)
         {
@@ -84,6 +93,7 @@ public class WallShifter : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        
         canMove = true; // Allow the player to move again
     }
 
@@ -104,6 +114,7 @@ public class WallShifter : MonoBehaviour
             yield return null;
             canMove = false; // Prevent the player from moving while the walls are shifting
         }
+        AudioSource.PlayClipAtPoint(wallMoveSound, transform.position, 1f);
 
         // Revert the walls to their original positions
         while (elapsedTime < wallShiftDuration)
@@ -144,6 +155,8 @@ public class WallShifter : MonoBehaviour
         // Check for button click input
         if (Lever.Lev.playerIsInFrontOfLever && Input.GetKeyDown(KeyCode.E))
         {
+            audioSource.PlayOneShot(leverSound);
+            
             popupText.SetActive(false);//deactivate it
             if (!wallsShifted)
             {
