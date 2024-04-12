@@ -8,6 +8,7 @@ TagManager:
   - Lever
   - Enemy
   - Coins
+  - Bishops
   layers:
   - Default
   - TransparentFX

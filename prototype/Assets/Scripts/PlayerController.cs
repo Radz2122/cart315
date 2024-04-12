@@ -13,6 +13,8 @@ public int currentCoins; // current amount of coins player has
   private AudioSource audioSource;
       public AudioClip hitSound;        // Sound effect for getting hit
     public AudioClip collectSound; // sound effect for collecting coins
+    public GameObject popupTextBishop;//ref to the popup text that appears when player is in front the bishops and they do not have enough money  
+
     
     void Start()
     {
@@ -26,6 +28,7 @@ public int currentCoins; // current amount of coins player has
         }
      // Get the AudioSource component attached to the character
         audioSource = GetComponent<AudioSource>();
+        popupTextBishop.SetActive(false);
     }
 
     void Update()
@@ -80,11 +83,24 @@ public int currentCoins; // current amount of coins player has
             Destroy(other.gameObject);
             UpdateCoinText();
              audioSource.PlayOneShot(collectSound);
-            
-           
          }
+       
 
 }
+ private void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.CompareTag("Bishops"))
+        {
+           if(currentCoins<=4){
+                popupTextBishop.SetActive(true);
+            }     
+        }
+}
+private void OnCollisionExit2D(Collision2D other) {
+        if (other.gameObject.CompareTag("Bishops"))
+        {
+                popupTextBishop.SetActive(false);
+        }
+  }
 void UpdateCoinText()
     {
      // Update the UI text to display the remaining lives
