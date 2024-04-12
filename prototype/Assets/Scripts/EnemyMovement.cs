@@ -4,7 +4,6 @@ public class EnemyMovement : MonoBehaviour
 {
     public Transform[] waypoints;
     public float speed = 5f;
-
     private int currentWaypointIndex = 0;
     private int direction = 1;
 

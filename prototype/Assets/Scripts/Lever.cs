@@ -3,46 +3,39 @@ using UnityEngine.UI;
 
 public class Lever : MonoBehaviour
 {
-    public GameObject popupText;
-    public GameObject popupTextCannotUseLever;// text that appears when player is in front of lever but cannot use it
-
-     private SpriteRenderer leverRenderer; // Reference to the lever's SpriteRenderer component
-      public Sprite leverOnSprite; // Reference to the sprite when the lever is on
-    public Sprite leverOffSprite; // Reference to the sprite when the lever is off
+    public GameObject popupText; // Reference to the popup text that appears when player is in front of lever
+    public GameObject popupTextCannotUseLever; // Text that appears when player is in front of lever but cannot use it
+    private SpriteRenderer leverRenderer; // Reference to the lever's SpriteRenderer component
+    public Sprite leverOnSprite; // Sprite when the lever is on
+    public Sprite leverOffSprite; // Sprite when the lever is off
     public bool playerIsInFrontOfLever = false; // Indicates whether the player is in front of the lever or not
     public static Lever Lev;
-   
-     void Awake()
+
+    void Awake()
     {
-        Lev=this;
+        Lev = this;
     }
-      
-    void Start(){
+
+    void Start()
+    {
+        // Deactivate popup texts at start
         popupText.SetActive(false);
         popupTextCannotUseLever.SetActive(false);
+
         // Get the SpriteRenderer component attached to the lever GameObject
         leverRenderer = GetComponent<SpriteRenderer>();
-        playerIsInFrontOfLever=false;
-      
+        playerIsInFrontOfLever = false;
     }
+
     void Update()
     {
-        if (WallShifter.WS.wallsShifted)
-        {
-            // Set lever sprite to on sprite
-            leverRenderer.sprite = leverOnSprite;
-        }
-        else
-        {
-            // Set lever sprite to off sprite
-            leverRenderer.sprite = leverOffSprite;
-            // wallsShifted=false;
-        }
-
+        // Set lever sprite based on whether walls are shifted or not
+        leverRenderer.sprite = WallShifter.WS.wallsShifted ? leverOnSprite : leverOffSprite;
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) 
+        if (other.CompareTag("Player"))
         {
             if (WallShifter.WS.canUseLever)
             {
@@ -50,18 +43,20 @@ public class Lever : MonoBehaviour
                 popupText.SetActive(true);
                 playerIsInFrontOfLever = true;
             }
-            else{
+            else
+            {
+                // Display the popup text indicating the lever cannot be used
                 popupTextCannotUseLever.SetActive(true);
                 playerIsInFrontOfLever = true;
             }
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
-         
-                popupText.SetActive(false);
-                popupTextCannotUseLever.SetActive(false);
-                playerIsInFrontOfLever = false;
-            
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        // Deactivate all popup texts and reset lever state when player moves away
+        popupText.SetActive(false);
+        popupTextCannotUseLever.SetActive(false);
+        playerIsInFrontOfLever = false;
     }
 }

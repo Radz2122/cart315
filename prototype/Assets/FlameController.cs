@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FlameController : MonoBehaviour
 {
-     public GameObject characterObject; // Reference to the main character GameObject
+    public GameObject characterObject; // Reference to the main character GameObject
      //reference to the SpriteRenderer component of the main character and companion
     private SpriteRenderer characterSpriteRenderer;
     private SpriteRenderer companionSpriteRenderer;
@@ -55,9 +55,8 @@ public class FlameController : MonoBehaviour
     }
     void Shoot()
     {
-       
-           // Calculate the position the     projectile is gonna spawn at
-         spawnPosition = new Vector2(transform.position.x, transform.position.y-0.01f);
+        // Calculate the position the     projectile is gonna spawn at
+        spawnPosition = new Vector2(transform.position.x, transform.position.y-0.01f);
 
         // Instantiate a projectile at the calculated position
         GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
@@ -66,10 +65,10 @@ public class FlameController : MonoBehaviour
         Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
            
          // Determine the direction of the projectile based on the character's facing direction
-    Vector2 shootDirection = characterSpriteRenderer.flipX ? Vector2.left : Vector2.right;
+         Vector2 shootDirection = characterSpriteRenderer.flipX ? Vector2.left : Vector2.right;
 
-    // Set the velocity of the projectile based on the character's direction
-    projectileRb.velocity = shootDirection * projectileSpeed;
+         // Set the velocity of the projectile based on the character's direction
+         projectileRb.velocity = shootDirection * projectileSpeed;
     }
   
 }
