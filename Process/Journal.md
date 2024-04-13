@@ -125,7 +125,7 @@ Figure 5 featuring a hidden enemy on the left, the player, and some coins on the
 # Presentation
 ## Link: https://xd.adobe.com/view/aef95ff6-55a3-4b28-a237-f245cb84db45-fbaa/?fullscreen
 
-# Final prototype: Chessboard Maze: Pawn in Shining Armor 
+# Final prototype- Chessboard Maze: Pawn in Shining Armor 
 (Refer to “Start” scene in GitHub for the final game version)
 
 ## The Pawn in Shining Armor is a puzzle strategy game where you have to travel across a maze on a chessboard as a pawn to free your queen on the other side. You win by collecting all the coins scattered across the maze to bribe the bishop guarding the queen and setting her free.
