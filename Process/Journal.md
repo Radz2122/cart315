@@ -125,5 +125,19 @@ Figure 5 featuring a hidden enemy on the left, the player, and some coins on the
 # Presentation
 ## Link: https://xd.adobe.com/view/aef95ff6-55a3-4b28-a237-f245cb84db45-fbaa/?fullscreen
 
+# Final prototype: Chessboard Maze: Pawn in Shining Armor 
+(Refer to “Start” scene in GitHub for the final game version)
+
+## The Pawn in Shining Armor is a puzzle strategy game where you have to travel across a maze on a chessboard as a pawn to free your queen on the other side. You win by collecting all the coins scattered across the maze to bribe the bishop guarding the queen and setting her free.
+
+The final prototype of my game is fully functional. While it incorporates all vital gameplay elements, it lacks the visual finesse I had envisioned for it. The final version included the addition of a combat system, enemy pathfinding, maze adjustments through levers, and new screens to signify victory or defeat. Further improvements included helpful pop-ups for player guidance, animated camera movements to reveal maze changes, and additional lighting to accentuate those changes.
+
+The most challenging aspect of coding was animating the walls and synchronizing them with the camera's zoom. It required extensive research and the application of functions that were new to me. While my original concept included a simple minimap to assist players, I decided against it to maintain the game's difficulty level. It was rewarding to take on this challenge, as it significantly expanded my knowledge. Among the various aspects I explored, experimenting with Unity's lighting features was particularly enjoyable and aligned perfectly with my initial objectives for the project.
+
+Post-presentation, I enhanced the game by integrating atmospheric music, sound effects, and constraints on lever interactions. I also introduced a start screen and additional pop-up messages. The feedback I received from a student suggested the intriguing idea of integrating turn-based chess strategies into the combat system, an aspect that piqued my interest for future updates.
+
+Overall, I am pleased with the final prototype’s performance, having brought all the planned features to life and added extra elements. In the future, I would like to enhance the game's visual charm and improve its combat mechanics to make it even more engaging.
+
+
 
 
