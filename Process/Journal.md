@@ -138,6 +138,12 @@ Post-presentation, I enhanced the game by integrating atmospheric music, sound e
 
 Overall, I am pleased with the final prototype’s performance, having brought all the planned features to life and added extra elements. In the future, I would like to enhance the game's visual charm and improve its combat mechanics to make it even more engaging.
 
+# Playtests
+Throughout the prototype’s development, many playtests were done, yet two were particularly important in advancing the prototype. During the initial playtest, I observed a participant interacting with the game in stage four without prior instructions. They navigated the map but lacked direction because of no prompt for the space bar attack. Initially, I assigned wall movement to the Q button, since the lever mechanism wasn’t integrated yet. The participant remained unaware of its function until informed. Even then, the purpose of the wall movement was unclear as they couldn’t discern the changes, leading me to introduce a zoom-out feature and an auditory signal. Additionally, the absence of instructions on collecting coins prompted me to design an introductory screen with guidelines for the final version.
+
+The second significant playtest occurred after my presentation but before the integration of previously mentioned features in the Final prototype section. In this session, I briefed the player on their objectives and the mechanics of firing fireballs. With this knowledge, they explored the map and quickly deducted that they need to operate the lever to navigate the maze and gather coins. As highlighted in the conclusion of my presentation, there were no limitations on lever usage, which allowed the player to activate it repeatedly in order to decipher the maze’s configuration. This observation led to the implementation of a usage timer. During an earlier playtest, I gained insight into a player’s ability to move while the camera is zoomed out, which was an unintended possibility that I then rectified to prevent in future gameplay.
+
+# Link to final game build
 
 
 
