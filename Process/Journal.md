@@ -144,6 +144,7 @@ Throughout the prototype’s development, many playtests were done, yet two were
 The second significant playtest occurred after my presentation but before the integration of previously mentioned features in the Final prototype section. In this session, I briefed the player on their objectives and the mechanics of firing fireballs. With this knowledge, they explored the map and quickly deducted that they need to operate the lever to navigate the maze and gather coins. As highlighted in the conclusion of my presentation, there were no limitations on lever usage, which allowed the player to activate it repeatedly in order to decipher the maze’s configuration. This observation led to the implementation of a usage timer. During an earlier playtest, I gained insight into a player’s ability to move while the camera is zoomed out, which was an unintended possibility that I then rectified to prevent in future gameplay.
 
 # Link to final game build
+https://github.com/Radz2122/cart315/blob/master/prototype/Build/prototype.exe
 
 
 
